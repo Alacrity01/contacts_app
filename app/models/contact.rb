@@ -4,7 +4,11 @@ class Contact < ApplicationRecord
   end
 
   def full_name
-    "#{first_name} #{last_name}"
+    if middle_name == nil
+      "#{first_name} #{last_name}"
+    else
+      "#{first_name} #{middle_name} #{last_name}"
+    end
   end
 
   def japan_phone_number
