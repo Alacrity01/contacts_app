@@ -1,5 +1,7 @@
 class Api::ContactsController < ApplicationController
   def index
+    p current_user
+
     @contacts = Contact.all
     search_term = params[:search]
 
