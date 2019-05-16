@@ -11,3 +11,5 @@ json.bio contact.bio
 json.formatted do
   json.updated_at contact.friendly_updated_at
 end
+
+json.user_id contact.user_id
