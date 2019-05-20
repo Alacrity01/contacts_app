@@ -30,3 +30,26 @@
 #   contact.destroy
 #   index += 1
 # end
+
+Group.create(name: "friends")
+Group.create(name: "family")
+Group.create(name: "strangers")
+
+# ContactGroup.create(group_id: 3, contact_id: 1009)
+
+Group.create(name: "Chicago")
+Group.create(name: "Work")
+Group.create(name: "Don't Like")
+Group.create(name: "Good Dresser")
+
+groups = Group.all
+contacts = Contact.all
+
+contacts.each do |contact|
+  selected_groups = groups.sample(rand(2..5))
+     selected_groups.each do |group|
+    ContactGroup.create(contact_id: contact.id, group_id: group.id)
+  end
+end
+
+#  
